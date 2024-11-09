@@ -39,7 +39,7 @@ Literalura te ofrece varias funcionalidades para explorar y descubrir libros:
 - **Java 8 o superior**: PlayHunt Game Manager está desarrollado en Java, por lo que necesitas tener el JDK instalado.
 - **Spring Boot**: Framework utilizado para la estructura del proyecto y manejo de dependencias.
 - **PostgreSQL**: Base de datos relacional donde se almacenan los datos de los videojuegos.
-- **Conexión a internet**: La aplicación utiliza la API de RAWG para obtener datos de videojuegos y la API de DeepTranslate para traducir descripciones en tiempo real.
+- **Conexión a internet**: La aplicación utiliza la API de Gutendex para obtener datos de los libros.
 
 ## ✒️ Autor
 
