@@ -114,6 +114,7 @@ public class Main {
         }
 
         showLibro(libroSave);
+        System.out.println("Libro agregado.");
 
     }
 
@@ -126,6 +127,7 @@ public class Main {
             return;
         }
 
+        System.out.println("\n*********** LIBROS REGISTRADOS ***********\n");
         libros.forEach(l-> showLibro(l));
 
     }
@@ -139,6 +141,7 @@ public class Main {
             return;
         }
 
+        System.out.println("\n*********** AUTORES REGISTRADOS ***********");
         autores.forEach(autor ->{
 
             String libros = autor.getLibros().stream().map(l -> l.getTitulo()).toList().toString();
@@ -165,6 +168,8 @@ public class Main {
             System.out.println("No se encontraron autores vivos en ese año");
             return;
         }
+
+        System.out.println("\n*********** AUTORES VIVOS EN EL AÑO " + anio + " ***********");
 
         autores.forEach(autor ->{
             String libros = autor.getLibros().stream().map(l -> l.getTitulo()).toList().toString();
@@ -203,12 +208,26 @@ public class Main {
             return;
         }
 
+
+
         List<Libro> libros = libroRepository.findByIdioma(idioma);
+
+
+        String idiomaSeleccionado="";
+
+        switch (idioma){
+            case "es": idiomaSeleccionado ="Español"; break;
+            case "en": idiomaSeleccionado="Inglés";break;
+            case "fr": idiomaSeleccionado="Francés";break;
+            case "pt": idiomaSeleccionado="Portugués";break;
+        }
 
         if (libros.isEmpty()){
             System.out.println("No se encontraron libros con el idioma ingresado");
             return;
         }
+
+        System.out.println("\n*********** LIBROS EN EL IDIOMA " + idiomaSeleccionado.toUpperCase() + " ***********\n");
 
 
         libros.forEach(l-> showLibro(l));
